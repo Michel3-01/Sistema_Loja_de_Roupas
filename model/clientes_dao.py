@@ -5,6 +5,9 @@
 lista_clientes = []
 #Adicionar um cliente.
 def adicionar(novo_cliente):
+    #Inserir o Id do cliente.
+    novo_id = len(lista_clientes)+1
+    novo_cliente.id = novo_id
     lista_clientes.append(novo_cliente)
 
 def pegar_cliente(id_cliente):

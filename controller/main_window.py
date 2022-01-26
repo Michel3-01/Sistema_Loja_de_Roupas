@@ -3,6 +3,7 @@ from controller.cliente_page import ClientePage
 from controller.funcionario_page import FuncionarioPage
 from controller.estoque_page import EstoquePage
 from controller.relatorio_page import RelatorioPage
+from controller.vendas_page import CadastroVendas
 FILE_UI='view/main_window.ui'
 
 class MainWindow(QMainWindow):
@@ -14,18 +15,21 @@ class MainWindow(QMainWindow):
         self.estoque_page = EstoquePage()
         self.cliente_page = ClientePage()
         self.func_page = FuncionarioPage()
+        self.vendas_page = CadastroVendas()
 
         #Adiciona ás páginas ao painel principal.
         self.painel_principal.insertWidget(0, self.relatorio_page)
         self.painel_principal.insertWidget(1, self.estoque_page)
         self.painel_principal.insertWidget(2, self.cliente_page)
         self.painel_principal.insertWidget(3, self.func_page)
+        self.painel_principal.insertWidget(4, self.vendas_page)
 
         #Define os eventos/ações dos botões.
         self.relatorio_btn.clicked.connect(self.show_relatorio)
         self.estoque_btn.clicked.connect(self.show_estoque)
         self.cad_clientes_btn.clicked.connect(self.show_cad_clientes)
         self.cad_func_btn.clicked.connect(self.show_cad_func)
+        self.vendas_btn.clicked.connect(self.show_cad_vendas)
 
     def show_relatorio(self):
         self.painel_principal.setCurrentIndex(0)
@@ -35,4 +39,6 @@ class MainWindow(QMainWindow):
         self.painel_principal.setCurrentIndex(2)
     def show_cad_func(self):
         self.painel_principal.setCurrentIndex(3)
+    def show_cad_vendas(self):
+        self.painel_principal.setCurrentIndex(4)
        
