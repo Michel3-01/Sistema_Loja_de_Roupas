@@ -1,4 +1,3 @@
-from unicodedata import numeric
 from model.produtos import Produtos
 from qt_core import *
 import model.clientes_dao as funções_clientes
