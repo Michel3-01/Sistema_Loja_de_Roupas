@@ -10,6 +10,9 @@ class ClientePage(QWidget):
         super().__init__()
         uic.loadUi(FILE_UI,self)
 
+        
+        
+        self.carrega_dados()
         #Evento dos botões.
         self.cancelar_btn.clicked.connect(self.fechar_janela)
         self.salvar_btn.clicked.connect(self.salvar)
@@ -25,9 +28,13 @@ class ClientePage(QWidget):
         #criar o objeto.
         novo_cliente = Clientes(None,nome,email,telefone)
         funções_clientes.adicionar(novo_cliente)
+
         
         #Carrega os dados na minha tabela.
+         
+        self.carrega_dados()
         #Pegar a lista de todos os clientes.
+    def carrega_dados(self):
         lista_clientes = funções_clientes.lista_clientes
         #Zera a tabela e reconstroi.
         self.tabela_clientes.setRowCount(0) #Zera as linhas da tabela.

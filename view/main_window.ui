@@ -24,211 +24,169 @@
    <string notr="true">background-color:rgb(108, 99, 176);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="Line" name="line_2">
-    <property name="geometry">
-     <rect>
-      <x>256</x>
-      <y>9</y>
-      <width>16</width>
-      <height>548</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
-    </property>
-   </widget>
-   <widget class="QStackedWidget" name="painel_principal">
-    <property name="geometry">
-     <rect>
-      <x>265</x>
-      <y>9</y>
-      <width>517</width>
-      <height>548</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="Line" name="line">
-    <property name="geometry">
-     <rect>
-      <x>788</x>
-      <y>9</y>
-      <width>16</width>
-      <height>548</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="vendas_btn">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>130</y>
-      <width>82</width>
-      <height>42</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Impact</family>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(214, 131, 255);
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="font">
+         <font>
+          <family>Impact</family>
+          <pointsize>18</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>Sistema Loja de roupas e</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="font">
+         <font>
+          <family>Impact</family>
+          <pointsize>18</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>Calçados</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="relatorio_btn">
+        <property name="font">
+         <font>
+          <family>Impact</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(214, 131, 255);
 color: rgb(255, 255, 255);
 padding: 10px;
 </string>
-    </property>
-    <property name="text">
-     <string>Vendas</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="cad_func_btn">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>300</y>
-      <width>175</width>
-      <height>42</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Impact</family>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(214, 131, 255);
+        </property>
+        <property name="text">
+         <string>Relatório</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="vendas_btn">
+        <property name="font">
+         <font>
+          <family>Impact</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(214, 131, 255);
 color: rgb(255, 255, 255);
 padding: 10px;
 </string>
-    </property>
-    <property name="text">
-     <string>Cadastrar Funcionarios</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="cad_clientes_btn">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>240</y>
-      <width>145</width>
-      <height>42</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Impact</family>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(214, 131, 255);
+        </property>
+        <property name="text">
+         <string>Vendas</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="estoque_btn">
+        <property name="font">
+         <font>
+          <family>Impact</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(214, 131, 255);
 color: rgb(255, 255, 255);
 padding: 10px;
 </string>
-    </property>
-    <property name="text">
-     <string>Cadastrar Clientes</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>239</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Impact</family>
-      <pointsize>18</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>Sistema Loja de roupas e</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>45</y>
-      <width>90</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Impact</family>
-      <pointsize>18</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>Calçados</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="relatorio_btn">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>80</y>
-      <width>82</width>
-      <height>42</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Impact</family>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(214, 131, 255);
+        </property>
+        <property name="text">
+         <string>Estoque</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="cad_clientes_btn">
+        <property name="font">
+         <font>
+          <family>Impact</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(214, 131, 255);
 color: rgb(255, 255, 255);
 padding: 10px;
 </string>
-    </property>
-    <property name="text">
-     <string>Relatório</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="estoque_btn">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>180</y>
-      <width>74</width>
-      <height>42</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Impact</family>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(214, 131, 255);
+        </property>
+        <property name="text">
+         <string>Cadastrar Clientes</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="cad_func_btn">
+        <property name="font">
+         <font>
+          <family>Impact</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(214, 131, 255);
 color: rgb(255, 255, 255);
 padding: 10px;
 </string>
-    </property>
-    <property name="text">
-     <string>Estoque</string>
-    </property>
-   </widget>
+        </property>
+        <property name="text">
+         <string>Cadastrar Funcionarios</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="Line" name="line_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QStackedWidget" name="painel_principal"/>
+    </item>
+    <item>
+     <widget class="Line" name="line">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
