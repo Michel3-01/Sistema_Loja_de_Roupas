@@ -24,21 +24,22 @@ class CadastroVendas(QWidget):
         #valor_pago.
         self.valor_pago = 0
         #Lista de clientes
-        self.lista_clientes = funções_clientes.lista_clientes
+        #self.lista_clientes = funções_clientes.lista_clientes
 
-        temp_list = [] #Armazena os nomes dos clientes.
-        for x in self.lista_clientes:
-            temp_list.append(x.nome)
+        #temp_list = [] #Armazena os nomes dos clientes.
+        #for x in self.lista_clientes:
+            #temp_list.append(x.nome)
 
-        self.clientes_combobox.addItems(temp_list)
+        #self.clientes_combobox.addItems(temp_list)
 
         #Evento do botão finalizar venda.
         self.finalizar_venda_btn.clicked.connect(self.finalizar_venda)
+        self.adicionar_btn.clicked.connect(self.add_produto_lista)
 
-        self.carrega_clientes()
+        #self.carrega_clientes()
         self.carrega_produtos()
     
-    def carrega_clientes(self):
+    """def carrega_clientes(self):
         #lista de peças.
         
         #Lista de clientes
@@ -50,9 +51,9 @@ class CadastroVendas(QWidget):
 
         self.clientes_combobox.addItems(temp_list)
         #Evento que pega o INDEX do cliente selecionado.
-        self.clientes_combobox.currentIndexChanged.connect(self.pega_cliente)
+        self.clientes_combobox.currentIndexChanged.connect(self.pega_cliente)"""
         #adicionar um produto.
-        self.adicionar_btn.clicked.connect(self.add_produto_lista)
+        
         
     def add_produto_lista(self,index):
         lista_compra = self.lista_produto

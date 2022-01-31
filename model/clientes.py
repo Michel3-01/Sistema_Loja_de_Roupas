@@ -4,5 +4,5 @@ class Clientes():
         self.nome = nome
         self.email = email
         self.telefone = telefone
-    def print(self):
-        print(f'{self.id}, {self.nome}, {self.email}, {self.telefone}')
+    def getCliente(self):
+        return [self.nome, self.email, self.telefone]

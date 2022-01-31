@@ -60,25 +60,6 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="relatorio_btn">
-        <property name="font">
-         <font>
-          <family>Impact</family>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(214, 131, 255);
-color: rgb(255, 255, 255);
-padding: 10px;
-</string>
-        </property>
-        <property name="text">
-         <string>Relatório</string>
-        </property>
-       </widget>
-      </item>
-      <item>
        <widget class="QPushButton" name="vendas_btn">
         <property name="font">
          <font>
@@ -113,6 +94,44 @@ padding: 10px;
         </property>
         <property name="text">
          <string>Estoque</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="relatorio_btn">
+        <property name="font">
+         <font>
+          <family>Impact</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(214, 131, 255);
+color: rgb(255, 255, 255);
+padding: 10px;
+</string>
+        </property>
+        <property name="text">
+         <string>Relatório</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="produtos_btn">
+        <property name="font">
+         <font>
+          <family>Impact</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(214, 131, 255);
+color: rgb(255, 255, 255);
+padding: 10px;
+</string>
+        </property>
+        <property name="text">
+         <string>Produtos</string>
         </property>
        </widget>
       </item>

@@ -1,4 +1,5 @@
 import email
+from pydoc import cli
 from qt_core import *
 from model.clientes import Clientes
 import model.clientes_dao as funções_clientes
@@ -12,7 +13,7 @@ class ClientePage(QWidget):
 
         
         
-        self.carrega_dados()
+        #self.carrega_dados()
         #Evento dos botões.
         self.cancelar_btn.clicked.connect(self.fechar_janela)
         self.salvar_btn.clicked.connect(self.salvar)
@@ -21,27 +22,31 @@ class ClientePage(QWidget):
         self.close()
     def salvar(self):
         #Pega os dados dos clientes.
-        nome = self.nome.text()
-        email = self.email.text()
-        telefone = self.telefone.text()
+        if self.nome.text == '' or self.email.text() == '' or self.telefone.text == '':
+            self.alerta.setText('Preencha todos os campos!')
+        else:
+            nome = self.nome.text()
+            email = self.email.text()
+            telefone = self.telefone.text()
         
-        #criar o objeto.
-        novo_cliente = Clientes(None,nome,email,telefone)
-        funções_clientes.adicionar(novo_cliente)
+            #criar o objeto.
+            cliente = Clientes(None,nome,email,telefone)
+            funções_clientes.adicionar(cliente)
 
         
         #Carrega os dados na minha tabela.
          
-        self.carrega_dados()
+        self.carrega_dados(cliente)
         #Pegar a lista de todos os clientes.
-    def carrega_dados(self):
-        lista_clientes = funções_clientes.lista_clientes
+    #def carrega_dados(self):
+        #lista_clientes = funções_clientes.lista_clientes
         #Zera a tabela e reconstroi.
-        self.tabela_clientes.setRowCount(0) #Zera as linhas da tabela.
-        for cliente in lista_clientes:
-            self.add_linha(cliente)
+        #self.tabela_clientes.setRowCount(0) #Zera as linhas da tabela.
+        #for cliente in lista_clientes:
+            #self.add_linha(cliente)
         #Fechar a janela.
-    def add_linha(self, cliente):
+        pass
+    def carrega_dados(self, cliente):
         rowCount = self.tabela_clientes.rowCount()
         self.tabela_clientes.insertRow(rowCount)
 
