@@ -11,6 +11,7 @@ def adicionar(novo_cliente):
         VALUES (?,?,?);"""
         cursor.execute(sql, novo_cliente.getCliente())
         conn.commit()
+        
     except Exception as e:
         print('Deu erro!')
         print(e)
