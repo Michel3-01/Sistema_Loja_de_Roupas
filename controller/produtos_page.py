@@ -18,17 +18,16 @@ class CadProduto(QWidget):
 
     def salvar_produto(self):
         nome_prod = self.nome.text()
-        valor_prod = self.valor.text()
         tipo_prod = self.marca.text()
         genero = self.genero.text()
         tamanho = self.tamanho.text()
-        print(nome_prod)
-
+        quant_estoque = self.quant_estoque.text()
+        valor_prod = self.valor.text()
+        
         #Criando um objeto.
-        novo_produto = Produtos(None,nome_prod,valor_prod,tipo_prod,genero,tamanho)
+        novo_produto = Produtos(None,nome_prod, tipo_prod,genero,tamanho,quant_estoque,valor_prod)
         funções_produto.adicionar_prod(novo_produto)
 
-        print(novo_produto)
 
         self.janela_produtos.show_produtos_page()
 

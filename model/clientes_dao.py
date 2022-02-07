@@ -1,9 +1,12 @@
 #Padrão DAO (Data Access Object);
 #Centraliza o acesso a dados dos objetos cliente.
 from model import database
+from model.clientes import Clientes
 
+lista_de_clientes = []
 #Adicionar um cliente.
 def adicionar(novo_cliente):
+    lista_de_clientes.append(novo_cliente)
     try:
         conn = database.connect()#Conecta
         cursor = conn.cursor()#Se move no banco
@@ -18,12 +21,12 @@ def adicionar(novo_cliente):
     finally:
         conn.close()
 
-def pegar_cliente(id_cliente):
+#def pegar_cliente(id_cliente):
     #percorre a lista de clientes:
     #for cliente in lista_clientes:
         #if cliente.id == id_cliente:
             #return cliente
-            pass
+            #pass
 #Editar um cliente.
 #def editar(cliente):
     #for i in range(0,len(lista_clientes)):
@@ -39,8 +42,37 @@ def pegar_cliente(id_cliente):
 
     
 #Lista todos os clientes.
-#def listar_todos():
-    #for clientes in lista_clientes:
-        #clientes.print()
+
+
+lista_clientes = []
+x = []
+def listar_clientes():
+    lista = []
+    try:
+        conn = database.connect()
+        cursor = conn.cursor()
+        sql = "SELECT * FROM Clientes"
+        cursor.execute(sql)
+        linhas = cursor.fetchall()
+        for cliente in linhas:
+            #Pega as informações dos clientes.
+            id = cliente[0]
+            nome = cliente[1]
+            email = cliente[2]
+            telefone = cliente[3]
+            excluir = cliente[4]
+
+            novo_cliente = Clientes(id, nome, email, telefone,excluir)
+            lista.append(novo_cliente)
+            for cliente in linhas:
+                x.append(cliente) 
+            for clientes in x:
+                lista_clientes.append(clientes) 
+
+    except Exception as e:
+        print(e)
+    finally:
+        conn.close()
+    
 
 #Pegar um cliente específico.

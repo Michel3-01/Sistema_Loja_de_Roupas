@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>710</width>
-    <height>485</height>
+    <height>561</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,7 @@
   <property name="styleSheet">
    <string notr="true">background-color:rgb(108, 99, 176)</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_4">
+  <layout class="QVBoxLayout" name="verticalLayout_5">
    <item>
     <widget class="QLabel" name="label">
      <property name="font">
@@ -268,35 +268,111 @@ color:rgb(255,255,255);</string>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_3">
+     <layout class="QVBoxLayout" name="verticalLayout_4">
       <item>
-       <widget class="QTableWidget" name="tabela_funcionarios">
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QTableWidget" name="tabela_funcionarios">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);
 color:rgb(0, 0, 0);
 </string>
-        </property>
-        <column>
-         <property name="text">
-          <string>ID</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Nome</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Email</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Cargo</string>
-         </property>
-        </column>
-       </widget>
+          </property>
+          <column>
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Nome</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Email</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Cargo</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <spacer name="horizontalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QPushButton" name="salvar_btn_2">
+              <property name="font">
+               <font>
+                <family>Impact</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(214, 131, 255);
+color: rgb(255, 255, 255);
+padding: 10px;
+</string>
+              </property>
+              <property name="text">
+               <string>Editar</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="salvar_btn_3">
+              <property name="font">
+               <font>
+                <family>Impact</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(214, 131, 255);
+color: rgb(255, 255, 255);
+padding: 10px;
+</string>
+              </property>
+              <property name="text">
+               <string>Excluir</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
       </item>
      </layout>
     </widget>

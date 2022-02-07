@@ -58,7 +58,7 @@ class ClientePage(QWidget):
         
             for cliente in linhas:
                 self.add_linha(cliente)
-                print(cliente)
+                
                 
             
         

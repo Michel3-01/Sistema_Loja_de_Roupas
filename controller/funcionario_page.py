@@ -39,7 +39,7 @@ class FuncionarioPage(QWidget):
 
             for funcionario in linhas:
                 self.add_linha(funcionario)
-                print(funcionario)
+                
         
         except Exception as e:
             print(e)
