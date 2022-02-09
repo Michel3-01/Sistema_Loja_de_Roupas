@@ -8,7 +8,7 @@ from model.clientes import Clientes
 import model.clientes_dao as funções_clientes
     
 app = QApplication(sys.argv)
-#carrega_produtos()
+
 
 window = MainWindow()
 window.show()

@@ -87,7 +87,7 @@ padding: 10px;
 </string>
        </property>
        <property name="text">
-        <string>Cadastra Produro</string>
+        <string>Cadastra Produto</string>
        </property>
       </widget>
      </item>

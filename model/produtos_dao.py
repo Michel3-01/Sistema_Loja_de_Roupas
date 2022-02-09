@@ -28,8 +28,10 @@ def editar_prod(produto):
     try:
         conn = database_produtos.connect()
         cursor = conn.cursor()
-        sql = """UPDATE Produtos SET nome=?, tipo=?, genero=?, tamanho=?, quant_estoque=?, valor=?;"""
-        cursor.execute(sql,produto.getProdutos())
+        sql = """UPDATE Produtos SET nome=?, tipo=?, genero=?, tamanho=?, quant_estoque=?, valor=? WHERE id = ?;"""
+        l = produto.getProdutos()
+        l.append(produto.id)
+        cursor.execute(sql,l)
         conn.commit()
     except Exception as e:
         print(e)
@@ -43,7 +45,7 @@ def excluir_prod(id_produto):
         conn = database_produtos.connect()
         cursor = conn.cursor()
         sql = """DELETE FROM Produtos WHERE id = ?;"""
-        cursor.execute(sql,[id])
+        cursor.execute(sql,[id_produto])
         conn.commit()
     except Exception as e:
         print(e)

@@ -21,6 +21,14 @@ class ClientePage(QWidget):
         #Evento dos botões.
         self.cancelar_btn.clicked.connect(self.fechar_janela)
         self.salvar_btn.clicked.connect(self.salvar)
+        self.editar_btn.clicked.connect(self.editar)
+        self.excluir_btn.clicked.connect(self.excluir)
+    #Função de editar um cliente.
+    def editar(self):
+        pass
+    #Função de excluir um cliente.
+    def excluir(self):
+        pass
 
     def fechar_janela(self):
         self.close()
@@ -68,8 +76,13 @@ class ClientePage(QWidget):
         finally:
             conn.close()
         
-        
+        funções_clientes.listar_clientes()
         #Fechar a janela.
+        #self.tabela_clientes.currentRow(self.pega_cliente)
+
+    def pega_cliente(self, index):
+        pass
+
         
     def add_linha(self,cliente):
         rowCount = self.tabela_clientes.rowCount()

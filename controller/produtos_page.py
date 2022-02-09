@@ -7,15 +7,17 @@ import http
 FILE_UI='view/cadastro_produtos.ui'
 
 class CadProduto(QWidget):
-    def __init__(self,janela_produtos):
+    def __init__(self,janela_produtos, produto=None):
         super().__init__()
         uic.loadUi(FILE_UI, self)
 
+        self.produto = produto
         self.janela_produtos = janela_produtos
-
         self.salvar_prod_btn.clicked.connect(self.salvar_produto)
         self.cancelar_prod_btn.clicked.connect(self.cancelar_page)
 
+   
+          
     def salvar_produto(self):
         nome_prod = self.nome.text()
         tipo_prod = self.marca.text()
