@@ -24,6 +24,7 @@ def adicionar_prod(novo_produto):
     
 
 #Editar um produto.
+
 def editar_prod(produto):
     try:
         conn = database_produtos.connect()
@@ -60,6 +61,7 @@ def listar_produtos():
         cursor = conn.cursor()
         sql = "SELECT * FROM Produtos"
         cursor.execute(sql)
+        conn.commit()
         linhas = cursor.fetchall()
         for produto in linhas:
             id = produto[0]
@@ -75,17 +77,28 @@ def listar_produtos():
                 x.append(produto)
             for produtos in x:
                 lista_produtos.append(produtos)
-                
-            
+               
+       
     except Exception as e:
         print(e)
     finally:
         conn.close()
-    print(type(x))
     return lista 
   
-
-            
-    
-    
 #Listar um produto específico.
+def pesquisar_prod(nome_produto):
+    lista_prod_pesquisa = []
+    try:
+        conn = database_produtos.connect()
+        cursor = conn.cursor()
+        sql = """SELECT * FROM Produtos WHERE nome=?;"""
+        cursor.execute(sql,nome_produto)
+        linha = cursor.fetchall()
+        conn.commit()
+        for x in linha:
+           lista_prod_pesquisa.append(x)
+           print(x)
+    except Exception as e:
+        print(e)
+    finally:
+        conn.close()

@@ -10,4 +10,6 @@ class Produtos():
         self.valor_prod = valor_prod
     def getProdutos(self):
        return [self.nome_prod, self.tipo_prod, self.genero, self.tamanho , self.quant_estoque, self.valor_prod]
+    def getNome(self):
+        return [self.nome_prod]
         

@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>761</width>
-    <height>478</height>
+    <width>743</width>
+    <height>532</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color:rgb(108, 99, 176)</string>
+   <string notr="true">background-color:rgb(108, 99, 176);</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QLabel" name="label_5">
        <property name="font">
@@ -31,12 +31,12 @@
         <string notr="true">color: rgb(255, 255, 255);</string>
        </property>
        <property name="text">
-        <string>Produtos</string>
+        <string>Clientes</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="pesquisar_prod">
+      <widget class="QLineEdit" name="pesquisar_produto">
        <property name="font">
         <font>
          <pointsize>10</pointsize>
@@ -71,38 +71,50 @@ padding: 10px;
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QPushButton" name="listar_clientes_btn">
+       <property name="font">
+        <font>
+         <family>Impact</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(214, 131, 255);
+color: rgb(255, 255, 255);
+padding: 10px;
+</string>
+       </property>
+       <property name="text">
+        <string>Listar Clientes</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cadastrar_clientes_btn">
+       <property name="font">
+        <font>
+         <family>Impact</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(214, 131, 255);
+color: rgb(255, 255, 255);
+padding: 10px;
+</string>
+       </property>
+       <property name="text">
+        <string>Cadastrar Clientes</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item>
-    <widget class="QScrollArea" name="scrollArea">
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);</string>
-     </property>
-     <property name="widgetResizable">
-      <bool>true</bool>
-     </property>
-     <widget class="QWidget" name="scrollAreaWidgetContents">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>741</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <layout class="QVBoxLayout" name="painel_scrollarea"/>
-       </item>
-      </layout>
-     </widget>
+    <widget class="QStackedWidget" name="painel_clientes">
+     <widget class="QWidget" name="page"/>
+     <widget class="QWidget" name="page_2"/>
     </widget>
    </item>
   </layout>

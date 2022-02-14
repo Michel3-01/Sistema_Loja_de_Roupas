@@ -1,4 +1,4 @@
-import email
+
 from model.produtos import Produtos
 from qt_core import *
 import model.clientes_dao as funções_clientes
@@ -26,7 +26,7 @@ class CadastroVendas(QWidget):
         #valor_pago.
         self.valor_pago = 0
         #Lista de clientes
-        self.lista_clientes = funções_clientes.lista_clientes
+        
         self.cliente_atual = None
         self.lista_pega_dados_clientes = []
     
@@ -39,29 +39,26 @@ class CadastroVendas(QWidget):
         self.finalizar_venda_btn.clicked.connect(self.finalizar_venda)
         self.adicionar_btn.clicked.connect(self.add_produto_lista)
        
-        self.carrega_dados_clientes()
+       
         self.carrega_clientes()
         self.carrega_produtos()
         self.atualiza_dados_venda()
-    #Função que pega os dados dos clientes.
-    def carrega_dados_clientes(self):
-   
-        for x in funções_clientes.lista_clientes:
-            self.lista_pega_dados_clientes.append(x)
+        
+    
+ 
    
     #Função carrega clientes no combobox.
     def carrega_clientes(self):
-            self.lista_nome_clientes = []
-            for x in self.lista_pega_dados_clientes:
-                self.lista_nome_clientes.append(x[1])
-                
-      
-            self.clientes_combobox.addItems(self.lista_nome_clientes)
-            
-
-       
+ 
+        self.lista_nome_clientes = []
+        lista = funções_clientes.listar_clientes()
+        for cliente in lista:
+            self.lista_nome_clientes.append(cliente.nome)
+  
+        self.clientes_combobox.addItems(self.lista_nome_clientes)
+    
         #Evento que pega o INDEX do cliente selecionado.
-            self.clientes_combobox.currentIndexChanged.connect(self.pega_cliente)
+        self.clientes_combobox.currentIndexChanged.connect(self.pega_cliente)
         #adicionar um produto.
         
         
@@ -71,7 +68,7 @@ class CadastroVendas(QWidget):
             print('Insira os dados obrigatorios.')
         else:
             
-            nome = self.produto_atual[1]
+            nome = self.produto_atual.nome_prod
            
 
             #Calcula o valor unitario do produto vezes a quantidade de produtos.
@@ -91,10 +88,12 @@ class CadastroVendas(QWidget):
 
             self.subtotal.setText(f'R$ {self.valor_total}')
             self.lista_valores_venda.append(self.valor_total)
-            
 
             print('Valor total dos produtos:',self.valor_total)
-        
+          
+            
+
+
         
         lista_prod = self.lista_produto
 
@@ -118,76 +117,50 @@ class CadastroVendas(QWidget):
         self.tabela_produtos.setItem(rowCount,2,quantidade)
         self.tabela_produtos.setItem(rowCount,3,total)
 
+    
+
     def carrega_produtos(self):
-        try:
-            
-            conn = database_produtos.connect()#Conecta
-            consulta_sql = "SELECT * FROM Produtos"
-            cursor = conn.cursor()#Se move no banco
-            cursor.execute(consulta_sql)
-            linhas = cursor.fetchall()
-            listar_produtos = []
-            x = []      
-            for produto in linhas:
-                x.append(produto[1])
-            for produtos in x:
-                listar_produtos.append(produtos)
-                self.produtos_listWidget.addItem(produtos)
-           
-  
-        except Exception as e:
-            print('Deu erro!')
-            print(e)
-        finally:
-            conn.close()
+   
+            lista = funções_produtos.listar_produtos()
+            for produto in lista:
+                self.produtos_listWidget.addItem(produto.nome_prod)
+     
         
-        
-        self.produtos_listWidget.currentRowChanged.connect(self.pega_produto)
+            self.produtos_listWidget.currentRowChanged.connect(self.pega_produto)
     #Função de pegar um produto.
     def pega_produto(self, index):
     
-        try:
-            
-            conn = database_produtos.connect()#Conecta
-            consulta_sql = "SELECT * FROM Produtos"
-            cursor = conn.cursor()#Se move no banco
-            cursor.execute(consulta_sql)
-            linhas = cursor.fetchall()
+ 
+            lista = funções_produtos.listar_produtos()
             self.listar_produtos = []
-            x = []      
-            for produto in linhas:
+            x = []
+            for produto in lista:
                 x.append(produto)
             for produtos in x:
                 self.listar_produtos.append(produtos)
             self.produto_atual = self.listar_produtos[index]
-            self.valor_unitario.setText(str(self.produto_atual[6]))
-            print(self.produto_atual)
-
             
-               
-        
-        
-        except Exception as e:
-            print('Deu erro! tela produto!')
-            print(e)
-        finally:
-            conn.close()
-                
-                
- 
+            self.valor_unitario.setText(str(self.produto_atual.valor_prod))
+  
         #Set o valor do campo valor unitário para o valor do produto atual.
         
             
 
     #Função de pegar um cliente.
     def pega_cliente(self, index):
-       
-            for x in self.lista_pega_dados_clientes:
-                self.cliente_atual = x
-            print(self.cliente_atual[index]) 
-                
-           
+
+        self.listar_cliente = []
+        x = []
+        lista = funções_clientes.listar_clientes()
+        for cliente in lista:
+            x.append(cliente)
+        for cliente in x:
+            self.listar_cliente.append(cliente)
+        self.cliente_atual = self.listar_cliente[index]
         
+     
+        self.label_id.setText(str(self.cliente_atual.id))
+    
         
         
 
@@ -196,11 +169,14 @@ class CadastroVendas(QWidget):
         self.valor_pago = int(self.total_pago.text()) 
         valor_troco =  self.valor_pago - self.valor_total
         self.troco.setText(f'R$ {valor_troco}')
-        valor_total_vendas = 0
-        for x in self.lista_valores_venda:
-            valor_total_vendas += x
-        print(valor_total_vendas)
+      
 
+        #Salva os dados da venda.
+        nome = self.cliente_atual.nome
+        email = self.cliente_atual.email   
+        valor = self.valor_total
+        nova_venda = Vendas(None, nome, email,valor)
+        funções_vendas.adicionar_vendas(nova_venda)
 
         
           

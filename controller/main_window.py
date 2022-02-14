@@ -1,5 +1,5 @@
 from qt_core import *
-from controller.cliente_page import ClientePage
+from controller.clientes_tela_principal import ClientesTelaPrincipal
 from controller.funcionario_page import FuncionarioPage
 from controller.estoque_page import EstoquePage
 from controller.relatorio_page import RelatorioPage
@@ -15,7 +15,7 @@ class MainWindow(QMainWindow):
         
         self.relatorio_page = RelatorioPage()
         self.estoque_page = EstoquePage()
-        self.cliente_page = ClientePage()
+        self.cliente_page = ClientesTelaPrincipal()
         self.func_page = FuncionarioPage()
         self.vendas_page = CadastroVendas()
         self.prod_tela_principal = ProdutosTelaPrincipal()

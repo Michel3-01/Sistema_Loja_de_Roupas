@@ -6,13 +6,14 @@ from model import database
 #Variavel que contém o arquivo ui.
 FILE_UI = 'view/cadastro_clientes.ui'
 
-class ClientePage(QWidget):
+class CadClientes(QWidget):
     def __init__(self):
         super().__init__()
         uic.loadUi(FILE_UI,self)
         
         
-        self.listar_clientes = []
+        self.listar_clientes = funções_clientes.lista_clientes
+        self.cliente_atual = None
         
 
         
@@ -53,9 +54,7 @@ class ClientePage(QWidget):
          
         #Pegar a lista de todos os clientes.
     def carrega_dados(self):
-        
-        #Zera a tabela e reconstroi.
-        self.tabela_clientes.setRowCount(0) #Zera as linhas da tabela.
+    
         try:
             
             conn = database.connect()#Conecta
@@ -80,22 +79,5 @@ class ClientePage(QWidget):
         #Fechar a janela.
         #self.tabela_clientes.currentRow(self.pega_cliente)
 
-    def pega_cliente(self, index):
-        pass
-
         
-    def add_linha(self,cliente):
-        rowCount = self.tabela_clientes.rowCount()
-        self.tabela_clientes.insertRow(rowCount)
-
-        #Elementos de cada coluna da tabela.
-        id = QTableWidgetItem(str(cliente[0]))
-        nome = QTableWidgetItem(cliente[1])
-        email =QTableWidgetItem(cliente[2])
-        telefone = QTableWidgetItem(cliente[3])
-
-        #Insere os elementos da tabela na coluna correspondente.
-        self.tabela_clientes.setItem(rowCount, 0 , id)
-        self.tabela_clientes.setItem(rowCount, 1 , nome)
-        self.tabela_clientes.setItem(rowCount, 2 , email)
-        self.tabela_clientes.setItem(rowCount, 3 , telefone)
+        

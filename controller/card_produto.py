@@ -9,12 +9,12 @@ from model import database_produtos
 FILE_UI='view/card_produto.ui'
 
 class CardProduto(QWidget):
-    def __init__(self,produto,win_produtos):
+    def __init__(self,produto, janela_produtos):
         super().__init__()
         uic.loadUi(FILE_UI, self)
 
         self.produto = produto
-        self.mainwindow = win_produtos
+        self.janela_produtos= janela_produtos
         
 
         self.produto = produto
@@ -30,10 +30,12 @@ class CardProduto(QWidget):
         id = self.produto.id
         funções_produtos.excluir_prod(id)
         #Carrega a janela de produtos.
-        self.mainwindow.show_produtos_page()
+        self.janela_produtos.show_produtos_page()
 
     def editar(self):
-        self.mainwindow.show_tela_edição(self.produto)
+        self.janela_produtos.show_tela_edição(self.produto)
+
+    
     
        
         
