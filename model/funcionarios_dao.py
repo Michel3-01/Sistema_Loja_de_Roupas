@@ -60,9 +60,14 @@ def listar_todos():
         cursor = conn.cursor()
         sql = "SELECT * FROM Funcionarios"
         cursor.execute(sql)
+        conn.commit()
         result = cursor.fetchall()
-        for x in result:
-            novo_func = Funcionarios(x[1],x[2],x[3],x[4],x[5],x[6],x[7])
+        for funcionario in result:
+            id = funcionario[0]
+            nome = funcionario[1]
+            email = funcionario[2]
+            cargo = funcionario[3]
+            novo_func = Funcionarios(id, nome, email, cargo)
             lista.append(novo_func)
             
 
@@ -70,6 +75,7 @@ def listar_todos():
         print(e)
     finally:
         conn.close()
+    return lista
     
     
 

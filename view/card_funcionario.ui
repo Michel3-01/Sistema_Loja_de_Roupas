@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>566</width>
-    <height>183</height>
+    <width>553</width>
+    <height>296</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout_5">
+  <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
     <widget class="QFrame" name="frame_2">
      <property name="frameShape">
@@ -36,7 +36,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>ID:</string>
+             <string>ID</string>
             </property>
            </widget>
           </item>
@@ -55,7 +55,7 @@
              </size>
             </property>
             <property name="text">
-             <string>Nome CLiente:</string>
+             <string>Nome Funcionario</string>
             </property>
            </widget>
           </item>
@@ -73,7 +73,7 @@
           <item>
            <widget class="QLabel" name="label_telefone">
             <property name="text">
-             <string>telefone</string>
+             <string>cargo</string>
             </property>
            </widget>
           </item>

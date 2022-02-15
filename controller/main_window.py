@@ -1,10 +1,11 @@
 from qt_core import *
 from controller.clientes_tela_principal import ClientesTelaPrincipal
-from controller.funcionario_page import FuncionarioPage
+from controller.funcionarios_tela_principal import FuncionariosTelaPrincipal
+from controller.produtos_tela_principal import ProdutosTelaPrincipal
 from controller.estoque_page import EstoquePage
 from controller.relatorio_page import RelatorioPage
 from controller.vendas_page import CadastroVendas
-from controller.produtos_tela_principal import ProdutosTelaPrincipal
+
 FILE_UI='view/main_window.ui'
 
 class MainWindow(QMainWindow):
@@ -16,7 +17,7 @@ class MainWindow(QMainWindow):
         self.relatorio_page = RelatorioPage()
         self.estoque_page = EstoquePage()
         self.cliente_page = ClientesTelaPrincipal()
-        self.func_page = FuncionarioPage()
+        self.func_page = FuncionariosTelaPrincipal()
         self.vendas_page = CadastroVendas()
         self.prod_tela_principal = ProdutosTelaPrincipal()
 

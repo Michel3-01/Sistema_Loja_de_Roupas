@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>751</width>
-    <height>546</height>
+    <width>681</width>
+    <height>483</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -32,7 +32,7 @@
         <string notr="true">color: rgb(255, 255, 255);</string>
        </property>
        <property name="text">
-        <string>Produtos</string>
+        <string>Funcionarios</string>
        </property>
       </widget>
      </item>
@@ -50,7 +50,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="listar_produtos_btn">
+      <widget class="QPushButton" name="listar_funcionarios_btn">
        <property name="font">
         <font>
          <family>Impact</family>
@@ -64,12 +64,12 @@ padding: 10px;
 </string>
        </property>
        <property name="text">
-        <string>Listar Produtos</string>
+        <string>Listar Funcionarios</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="cadastrar_produto_btn">
+      <widget class="QPushButton" name="cadastrar_funcionarios_btn">
        <property name="font">
         <font>
          <family>Impact</family>
@@ -83,14 +83,14 @@ padding: 10px;
 </string>
        </property>
        <property name="text">
-        <string>Cadastrar Produto</string>
+        <string>Cadastrar funcionarios</string>
        </property>
       </widget>
      </item>
     </layout>
    </item>
    <item>
-    <widget class="QStackedWidget" name="painel_produtos">
+    <widget class="QStackedWidget" name="painel_funcionarios">
      <widget class="QWidget" name="page"/>
      <widget class="QWidget" name="page_2"/>
     </widget>
