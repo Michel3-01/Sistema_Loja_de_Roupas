@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>751</width>
-    <height>546</height>
+    <width>798</width>
+    <height>508</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color:rgb(108, 99, 176)
+   <string notr="true">background-color:rgb(108, 99, 176);
 </string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -32,7 +32,7 @@
         <string notr="true">color: rgb(255, 255, 255);</string>
        </property>
        <property name="text">
-        <string>Produtos</string>
+        <string>Funcionários</string>
        </property>
       </widget>
      </item>
@@ -64,7 +64,7 @@ padding: 10px;
 </string>
        </property>
        <property name="text">
-        <string>Listar Produtos</string>
+        <string>Listar Funcinários</string>
        </property>
       </widget>
      </item>
@@ -83,7 +83,7 @@ padding: 10px;
 </string>
        </property>
        <property name="text">
-        <string>Cadastra Produto</string>
+        <string>Cadastra Funcionários</string>
        </property>
       </widget>
      </item>

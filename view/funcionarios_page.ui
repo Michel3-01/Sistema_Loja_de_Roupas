@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>709</width>
-    <height>537</height>
+    <width>739</width>
+    <height>507</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,7 +29,7 @@
       <string notr="true">color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
-      <string>Clientes</string>
+      <string>Funcionários</string>
      </property>
     </widget>
    </item>
@@ -47,7 +47,7 @@ color: rgb(0, 0, 0);</string>
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>689</width>
+        <width>719</width>
         <height>20</height>
        </rect>
       </property>
@@ -59,7 +59,7 @@ color: rgb(0, 0, 0);</string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <layout class="QVBoxLayout" name="painel_clientes_scrollarea"/>
+        <layout class="QVBoxLayout" name="painel_funcionarios_scrollarea"/>
        </item>
       </layout>
      </widget>

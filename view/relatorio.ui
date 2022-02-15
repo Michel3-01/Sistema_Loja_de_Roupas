@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>621</width>
-    <height>568</height>
+    <width>593</width>
+    <height>574</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -264,7 +264,7 @@ color:rgb(0, 0, 0);
 color:rgb(255,255,255);</string>
        </property>
        <property name="title">
-        <string>Selecione o id da venda</string>
+        <string>Lucro/prejuizo</string>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
@@ -285,12 +285,33 @@ color:rgb(255,255,255);</string>
              </spacer>
             </item>
             <item>
-             <widget class="QComboBox" name="comboBox">
-              <property name="styleSheet">
-               <string notr="true">background-color: rgb(255, 255, 255);
+             <layout class="QHBoxLayout" name="horizontalLayout_8">
+              <item>
+               <widget class="QLabel" name="label_9">
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);</string>
+                </property>
+                <property name="text">
+                 <string>Digite o valor das despesas:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="label_despesas">
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
 color: rgb(0, 0, 0);</string>
-              </property>
-             </widget>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </item>
             <item>
              <spacer name="horizontalSpacer_4">
@@ -323,7 +344,7 @@ color: rgb(0, 0, 0);</string>
              </spacer>
             </item>
             <item>
-             <widget class="QPushButton" name="salvar_prod_btn">
+             <widget class="QPushButton" name="calcular_btn">
               <property name="font">
                <font>
                 <family>Impact</family>
@@ -337,7 +358,7 @@ padding: 10px;
 </string>
               </property>
               <property name="text">
-               <string>Ver comprovante</string>
+               <string>Calcular</string>
               </property>
              </widget>
             </item>
@@ -357,6 +378,13 @@ padding: 10px;
            </layout>
           </item>
          </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_lucro_prejuizo">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
