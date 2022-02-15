@@ -56,7 +56,7 @@ class RelatorioPage(QWidget):
             self.label_lucro_prejuizo.setText(f"A empresa não teve lucros nem prejuizo de R$:{resultado}")
             self.label_lucro_prejuizo.setStyleSheet("color: white; background-color: black; font-size: 35px")
         else:
-            self.label_lucro_prejuizo.setText(f"A empresa teve prejuizo de R$:{resultado}")
+            self.label_lucro_prejuizo.setText(f"A empresa teve prejuizo de R$:{resultado * (-1)}")
             self.label_lucro_prejuizo.setStyleSheet("color: red; background-color: black; font-size: 35px")
             
          
