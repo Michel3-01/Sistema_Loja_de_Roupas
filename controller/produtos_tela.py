@@ -13,17 +13,15 @@ class ProdutoPage(QWidget):
 
         self.janela_produtos = janela_produtos
         self.load()
-        self.pesquisar_btn.clicked.connect(self.pesquisar_produto)
+    
 
 
     def load(self):
         lista = funções_produto.listar_produtos()
         for self.produto in lista:
             self.painel_scrollarea.addWidget(CardProduto(self.produto, self.janela_produtos))
-    def pesquisar_produto(self):
-        self.produto.nome_prod = self.pesquisar_prod.text()
-        funções_produto.pesquisar_prod(self.produto.nome_prod)
-        
+    
+    
         
     
             

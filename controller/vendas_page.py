@@ -1,8 +1,10 @@
 
+from model.estoque import Estoque
 from model.produtos import Produtos
 from qt_core import *
 import model.clientes_dao as funções_clientes
 import model.produtos_dao as funções_produtos
+import model.estoque_dao as funções_estoque
 import model.vendas_dao as funções_vendas
 from model.vendas import Vendas
 from model import database
@@ -32,7 +34,6 @@ class CadastroVendas(QWidget):
     
 
 
-    
         self.carrega_produtos()
 
         #Evento do botão finalizar venda.
@@ -76,6 +77,28 @@ class CadastroVendas(QWidget):
             produto = {'id':len(self.lista_produto),'quantidade': self.quantidade.text(), 'nome':nome,'total':self.quant_preco}
             self.lista_produto.append(produto)
             self.atualiza_dados_venda()
+
+            #Atualizando o estoque:
+            nome_prod = self.produto_atual.nome_prod
+            quant_inicial = self.produto_atual.quant_estoque
+            vendidos = 0
+            vendidos = vendidos + self.quantidade.text()
+            quant_atual = int(self.produto_atual.quant_estoque) - int(self.quantidade.text())
+            if quant_atual <= 100:
+                situacao = 'Vermelho'
+            elif quant_atual >= 500:
+                situacao = 'Verde'
+            else:
+                situacao = 'Normal'
+            estoque = Estoque(None,nome_prod, quant_inicial, vendidos, quant_atual, situacao,self.produto_atual.id)
+            funções_estoque.adicionar(estoque)
+
+            lista_estoque = funções_estoque.listar_estoque()
+            for estoque in lista_estoque:
+                if self.produto.id == estoque.id_estoque:
+                    estoque = Estoque(None,nome_prod, quant_inicial, vendidos, quant_atual, situacao,self.produto_atual.id)
+                    funções_estoque.adicionar(estoque)
+
            
     def  atualiza_dados_venda(self):
         #atualiza a quantidade de itens e o valor_total.
@@ -124,6 +147,7 @@ class CadastroVendas(QWidget):
             lista = funções_produtos.listar_produtos()
             for produto in lista:
                 self.produtos_listWidget.addItem(produto.nome_prod)
+                
      
         
             self.produtos_listWidget.currentRowChanged.connect(self.pega_produto)
@@ -169,8 +193,10 @@ class CadastroVendas(QWidget):
         self.valor_pago = int(self.total_pago.text()) 
         valor_troco =  self.valor_pago - self.valor_total
         self.troco.setText(f'R$ {valor_troco}')
-      
 
+        self.salvar_vendas()
+      
+    def salvar_vendas(self):
         #Salva os dados da venda.
         nome = self.cliente_atual.nome
         email = self.cliente_atual.email   

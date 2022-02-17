@@ -14,17 +14,10 @@ class CadFuncionario(QWidget):
         #eventos dos botões.
         self.salvar_btn.clicked.connect(self.salvar)
         self.cancelar_btn.clicked.connect(self.fechar_janela)
-        self.editar_btn.clicked.connect(self.editar)
-        self.excluir_btn.clicked.connect(self.excluir)
+      
 
 
-    #Função de editar um cliente.
-    def editar(self):
-        pass
-    #Função de excluir um cliente.
-    def excluir(self):
-        pass
-
+  
 
     def salvar(self):
         nome = self.nome_func.text()
@@ -36,6 +29,6 @@ class CadFuncionario(QWidget):
 
 
     def fechar_janela(self):
-        pass
+        self.close()
        
 

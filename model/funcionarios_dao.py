@@ -43,7 +43,7 @@ def excluir(id_func):
         conn = database_funcionarios.connect()
         cursor = conn.cursor()
         sql = """DELETE FROM Funcionarios WHERE id=?;"""
-        cursor.execute(sql,[id])
+        cursor.execute(sql,[id_func])
         conn.commit()
 
     except Exception as e:

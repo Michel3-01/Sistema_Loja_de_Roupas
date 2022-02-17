@@ -18,18 +18,11 @@ class CadClientes(QWidget):
 
         
         
-        self.carrega_dados()
         #Evento dos botões.
         self.cancelar_btn.clicked.connect(self.fechar_janela)
         self.salvar_btn.clicked.connect(self.salvar)
-        self.editar_btn.clicked.connect(self.editar)
-        self.excluir_btn.clicked.connect(self.excluir)
-    #Função de editar um cliente.
-    def editar(self):
-        pass
-    #Função de excluir um cliente.
-    def excluir(self):
-        pass
+      
+
 
     def fechar_janela(self):
         self.close()
@@ -43,41 +36,17 @@ class CadClientes(QWidget):
             telefone = self.telefone.text()
         
             #criar o objeto.
-            cliente = Clientes(None,nome,email,telefone)
+            cliente = Clientes(None,nome, email, telefone,excluir=0)
             funções_clientes.adicionar(cliente)
 
 
-            self.carrega_dados()
             
         
         #Carrega os dados na minha tabela.
          
         #Pegar a lista de todos os clientes.
-    def carrega_dados(self):
     
-        try:
-            
-            conn = database.connect()#Conecta
-            consulta_sql = "SELECT * FROM Clientes"
-            cursor = conn.cursor()#Se move no banco
-            cursor.execute(consulta_sql)
-            linhas = cursor.fetchall()
-        
-            for cliente in linhas:
-                self.add_linha(cliente)
-                
-                
-            
-        
-        except Exception as e:
-            print('Deu erro!')
-            print(e)
-        finally:
-            conn.close()
-        
-        funções_clientes.listar_clientes()
-        #Fechar a janela.
-        #self.tabela_clientes.currentRow(self.pega_cliente)
+      
 
         
         

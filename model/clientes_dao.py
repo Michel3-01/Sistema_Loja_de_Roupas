@@ -10,8 +10,8 @@ def adicionar(novo_cliente):
     try:
         conn = database.connect()#Conecta
         cursor = conn.cursor()#Se move no banco
-        sql = """INSERT INTO Clientes (nome, email, telefone)
-        VALUES (?,?,?);"""
+        sql = """INSERT INTO Clientes (nome, email, telefone,excluir)
+        VALUES (?,?,?,0);"""
         cursor.execute(sql, novo_cliente.getCliente())
         conn.commit()
         
@@ -35,6 +35,22 @@ def editar(cliente):
         print(e)
     finally:
         conn.close()
+
+
+def update_excluir(id, excluir):
+    # atualiza contato
+
+    try:
+        conn = database.connect()
+        cursor = conn.cursor()
+        sql = """UPDATE Contatos SET excluir=? WHERE id=?;"""
+        cursor.execute(sql, [excluir, id])
+        conn.commit()
+    except Exception as e:
+        print(e)
+    finally:
+        conn.close()
+
 #Excluir um cliente.
 def excluir(id_cliente):
     try:
@@ -59,7 +75,7 @@ def listar_clientes():
     try:
         conn = database.connect()
         cursor = conn.cursor()
-        sql = "SELECT * FROM Clientes"
+        sql = "SELECT * FROM Clientes WHERE excluir = 0;"
         cursor.execute(sql)
         linhas = cursor.fetchall()
         for cliente in linhas:
@@ -68,9 +84,10 @@ def listar_clientes():
             nome = cliente[1]
             email = cliente[2]
             telefone = cliente[3]
+            excluir = cliente[4]
             
 
-            novo_cliente = Clientes(id, nome, email, telefone)
+            novo_cliente = Clientes(id, nome, email, telefone,excluir)
             lista.append(novo_cliente)
 
     except Exception as e:

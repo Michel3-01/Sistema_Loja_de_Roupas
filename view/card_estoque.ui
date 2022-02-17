@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>840</width>
-    <height>204</height>
+    <width>859</width>
+    <height>199</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,7 @@
   <property name="styleSheet">
    <string notr="true">background-color:#9999ff;</string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout_5">
+  <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
     <widget class="QFrame" name="frame">
      <property name="frameShape">
@@ -70,16 +70,16 @@
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>45</width>
+              <width>70</width>
               <height>20</height>
              </size>
             </property>
            </spacer>
           </item>
           <item>
-           <widget class="QLabel" name="label_tipo">
+           <widget class="QLabel" name="label_quant_inicial">
             <property name="text">
-             <string>Tipo</string>
+             <string>Quant_inicial</string>
             </property>
            </widget>
           </item>
@@ -93,16 +93,16 @@
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>100</width>
+              <width>130</width>
               <height>20</height>
              </size>
             </property>
            </spacer>
           </item>
           <item>
-           <widget class="QLabel" name="label_tamanho">
+           <widget class="QLabel" name="label_vendidos">
             <property name="text">
-             <string>tamanho</string>
+             <string>Vendidos</string>
             </property>
            </widget>
           </item>
@@ -116,16 +116,16 @@
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>90</width>
+              <width>135</width>
               <height>20</height>
              </size>
             </property>
            </spacer>
           </item>
           <item>
-           <widget class="QLabel" name="label_genero">
+           <widget class="QLabel" name="label_quant_atual">
             <property name="text">
-             <string>genero</string>
+             <string>Quant_atual</string>
             </property>
            </widget>
           </item>
@@ -139,16 +139,16 @@
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>85</width>
+              <width>135</width>
               <height>20</height>
              </size>
             </property>
            </spacer>
           </item>
           <item>
-           <widget class="QLabel" name="label_valor">
+           <widget class="QLabel" name="label_situacao">
             <property name="text">
-             <string>Valor do produto</string>
+             <string>Situação</string>
             </property>
            </widget>
           </item>
@@ -198,25 +198,6 @@
              </spacer>
             </item>
             <item>
-             <widget class="QPushButton" name="editar_btn">
-              <property name="font">
-               <font>
-                <family>Impact</family>
-                <pointsize>12</pointsize>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color: rgb(214, 131, 255);
-color: rgb(255, 255, 255);
-padding: 10px;
-</string>
-              </property>
-              <property name="text">
-               <string>Editar</string>
-              </property>
-             </widget>
-            </item>
-            <item>
              <widget class="QPushButton" name="excluir_btn">
               <property name="font">
                <font>
@@ -231,7 +212,7 @@ padding: 10px;
 </string>
               </property>
               <property name="text">
-               <string>Excluir</string>
+               <string>Repor produto</string>
               </property>
              </widget>
             </item>

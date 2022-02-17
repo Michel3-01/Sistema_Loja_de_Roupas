@@ -1,5 +1,3 @@
-import httpx
-import http
 from qt_core import *
 import model.produtos_dao as funções_produtos
 
@@ -18,8 +16,19 @@ class CardProduto(QWidget):
         
 
         self.produto = produto
+        self.label_valor.setText(str(self.produto.id))
         self.label_nome.setText(produto.nome_prod)
         self.label_valor.setText(str(produto.valor_prod))
+        self.label_tipo.setText(produto.tipo_prod)
+        self.label_tamanho.setText(produto.tamanho)
+        self.label_genero.setText(produto.genero)
+        #Stylesheet dos labels .
+        self.label_nome.setStyleSheet('border: 1px double black; border-radius: 10px; background-color:rgb(25, 0, 77); color:white; font-size: 15px; text-align:center;')
+        self.label_id.setStyleSheet('border: 1px dotted black; background-color:rgb(148, 77, 255); color:white; font-size:15px;')
+        self.label_tipo.setStyleSheet('font-size: 18px; color: white;')
+        self.label_tamanho.setStyleSheet('font-size: 18px; color: white;')
+        self.label_genero.setStyleSheet('font-size: 18px; color: white;')
+        self.label_valor.setStyleSheet('font-size: 18px; color: white;')
 
         #Evento dos botões.
         self.excluir_btn.clicked.connect(self.excluir)

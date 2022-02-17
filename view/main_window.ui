@@ -117,6 +117,25 @@ padding: 10px;
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="cad_func_btn">
+        <property name="font">
+         <font>
+          <family>Impact</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(214, 131, 255);
+color: rgb(255, 255, 255);
+padding: 10px;
+</string>
+        </property>
+        <property name="text">
+         <string>Funcionarios</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QPushButton" name="produtos_btn">
         <property name="font">
          <font>
@@ -150,26 +169,7 @@ padding: 10px;
 </string>
         </property>
         <property name="text">
-         <string>Cadastrar Clientes</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="cad_func_btn">
-        <property name="font">
-         <font>
-          <family>Impact</family>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(214, 131, 255);
-color: rgb(255, 255, 255);
-padding: 10px;
-</string>
-        </property>
-        <property name="text">
-         <string>Cadastrar Funcionarios</string>
+         <string> Clientes</string>
         </property>
        </widget>
       </item>
