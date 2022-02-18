@@ -6,9 +6,10 @@ from model import database_funcionarios
 FILE_UI='view/cadastro_funcionarios.ui'
 
 class CadFuncionario(QWidget):
-    def __init__(self):
+    def __init__(self,janela_funcionario):
         super().__init__()
         uic.loadUi(FILE_UI, self)
+        self.janela_funcionario = janela_funcionario
 
 
         #eventos dos botões.
@@ -27,8 +28,10 @@ class CadFuncionario(QWidget):
         novo_func = Funcionarios(None,nome,email,cargo)
         funções_funcionarios.adicionar_func(novo_func)
 
+        self.janela_funcionario.show_funcionarios_page()
+
 
     def fechar_janela(self):
-        self.close()
+        self.painel_funcionarios.setCurrentIndex(1)
        
 

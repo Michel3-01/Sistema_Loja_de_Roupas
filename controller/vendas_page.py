@@ -33,7 +33,7 @@ class CadastroVendas(QWidget):
         self.lista_pega_dados_clientes = []
     
 
-
+  
         self.carrega_produtos()
 
         #Evento do botão finalizar venda.
@@ -77,39 +77,30 @@ class CadastroVendas(QWidget):
             produto = {'id':len(self.lista_produto),'quantidade': self.quantidade.text(), 'nome':nome,'total':self.quant_preco}
             self.lista_produto.append(produto)
             self.atualiza_dados_venda()
-
+            vendidos = 0
             #Atualizando o estoque:
             nome_prod = self.produto_atual.nome_prod
             quant_inicial = self.produto_atual.quant_estoque
-            vendidos = self.quantidade.text()
-            quant_atual = int(self.produto_atual.quant_estoque) - int(self.quantidade.text())
+            vendidos = int(self.quantidade.text())
+            quant_atual = int(self.produto_atual.quant_estoque) - vendidos
             if quant_atual <= 100:
                 situacao = 'Vermelho'
             elif quant_atual >= 500:
                 situacao = 'Verde'
             else:
                 situacao = 'Normal'
+            
+        
             estoque = Estoque(None,nome_prod, quant_inicial, vendidos, quant_atual, situacao,self.produto_atual.id)
             funções_estoque.adicionar(estoque)
+          
 
-            lista_estoque = funções_estoque.listar_estoque()
-            self.vendidos = self.quantidade.text()
-            x =  int(self.produto_atual.quant_estoque) - int(self.quantidade.text())
-            for self.estoque in lista_estoque:
-                if self.produto_atual.id == estoque.id_estoque:
-                    self.vendidos = self.vendidos + self.quantidade.text()
-                    x = x - int(self.quantidade.text())
-            if quant_atual <= 100:
-                self.situacao = 'Vermelho'
-            elif quant_atual >= 500:
-                self.situacao = 'Verde'
-            else:
-                self.situacao = 'Normal'
-                self.atualizar_estoque()
-    def atualizar_estoque(self):
-        atualizar_estoque = Estoque(None,self.produto_atual.nome_prod,self.produto_atual.quant_estoque,self.vendidos,self.quant_atual,self.situacao,self.produto_atual.id)
-        funções_estoque.adicionar(atualizar_estoque)
-        funções_estoque.editar(self.produto_atual.id)
+    
+
+
+                    
+               
+                  
 
            
     def  atualiza_dados_venda(self):
@@ -207,6 +198,8 @@ class CadastroVendas(QWidget):
         self.troco.setText(f'R$ {valor_troco}')
 
         self.salvar_vendas()
+
+        
       
     def salvar_vendas(self):
         #Salva os dados da venda.
@@ -215,6 +208,10 @@ class CadastroVendas(QWidget):
         valor = self.valor_total
         nova_venda = Vendas(None, nome, email,valor)
         funções_vendas.adicionar_vendas(nova_venda)
+
+        self.close()
+
+        
 
         
           

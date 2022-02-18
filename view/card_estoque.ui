@@ -43,7 +43,7 @@
              <widget class="QLabel" name="label_nome">
               <property name="minimumSize">
                <size>
-                <width>80</width>
+                <width>150</width>
                 <height>80</height>
                </size>
               </property>
@@ -102,7 +102,7 @@
           <item>
            <widget class="QLabel" name="label_vendidos">
             <property name="text">
-             <string>Vendidos</string>
+             <string>0</string>
             </property>
            </widget>
           </item>
@@ -125,7 +125,7 @@
           <item>
            <widget class="QLabel" name="label_quant_atual">
             <property name="text">
-             <string>Quant_atual</string>
+             <string>0</string>
             </property>
            </widget>
           </item>
@@ -147,8 +147,16 @@
           </item>
           <item>
            <widget class="QLabel" name="label_situacao">
+            <property name="font">
+             <font>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 255, 255);</string>
+            </property>
             <property name="text">
-             <string>Situação</string>
+             <string>Normal</string>
             </property>
            </widget>
           </item>

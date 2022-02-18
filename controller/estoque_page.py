@@ -13,10 +13,7 @@ class EstoquePage(QWidget):
     
         self.load()
     def load(self):
-        lista_estoque = funções_estoque.listar_estoque()
-        for estoque in lista_estoque:
-            pass
         lista = funções_produto.listar_produtos()
         for produtos in lista:
-            self.painel_estoque_scrollarea.addWidget(CardEstoque(produtos,estoque))
+            self.painel_estoque_scrollarea.addWidget(CardEstoque(produtos))
            

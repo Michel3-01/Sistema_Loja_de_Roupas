@@ -16,7 +16,7 @@ class CardProduto(QWidget):
         
 
         self.produto = produto
-        self.label_valor.setText(str(self.produto.id))
+        self.label_id.setText(str(self.produto.id))
         self.label_nome.setText(produto.nome_prod)
         self.label_valor.setText(str(produto.valor_prod))
         self.label_tipo.setText(produto.tipo_prod)
