@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>859</width>
+    <width>1003</width>
     <height>199</height>
    </rect>
   </property>
@@ -183,40 +183,7 @@
            </spacer>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_6">
-            <item>
-             <spacer name="horizontalSpacer">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QPushButton" name="excluir_btn">
-              <property name="font">
-               <font>
-                <family>Impact</family>
-                <pointsize>12</pointsize>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color: rgb(214, 131, 255);
-color: rgb(255, 255, 255);
-padding: 10px;
-</string>
-              </property>
-              <property name="text">
-               <string>Repor produto</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
+           <layout class="QHBoxLayout" name="horizontalLayout_6"/>
           </item>
          </layout>
         </item>
