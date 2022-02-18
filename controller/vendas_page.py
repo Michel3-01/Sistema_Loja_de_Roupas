@@ -81,8 +81,7 @@ class CadastroVendas(QWidget):
             #Atualizando o estoque:
             nome_prod = self.produto_atual.nome_prod
             quant_inicial = self.produto_atual.quant_estoque
-            vendidos = 0
-            vendidos = vendidos + self.quantidade.text()
+            vendidos = self.quantidade.text()
             quant_atual = int(self.produto_atual.quant_estoque) - int(self.quantidade.text())
             if quant_atual <= 100:
                 situacao = 'Vermelho'
@@ -94,10 +93,23 @@ class CadastroVendas(QWidget):
             funções_estoque.adicionar(estoque)
 
             lista_estoque = funções_estoque.listar_estoque()
-            for estoque in lista_estoque:
-                if self.produto.id == estoque.id_estoque:
-                    estoque = Estoque(None,nome_prod, quant_inicial, vendidos, quant_atual, situacao,self.produto_atual.id)
-                    funções_estoque.adicionar(estoque)
+            self.vendidos = self.quantidade.text()
+            x =  int(self.produto_atual.quant_estoque) - int(self.quantidade.text())
+            for self.estoque in lista_estoque:
+                if self.produto_atual.id == estoque.id_estoque:
+                    self.vendidos = self.vendidos + self.quantidade.text()
+                    x = x - int(self.quantidade.text())
+            if quant_atual <= 100:
+                self.situacao = 'Vermelho'
+            elif quant_atual >= 500:
+                self.situacao = 'Verde'
+            else:
+                self.situacao = 'Normal'
+                self.atualizar_estoque()
+    def atualizar_estoque(self):
+        atualizar_estoque = Estoque(None,self.produto_atual.nome_prod,self.produto_atual.quant_estoque,self.vendidos,self.quant_atual,self.situacao,self.produto_atual.id)
+        funções_estoque.adicionar(atualizar_estoque)
+        funções_estoque.editar(self.produto_atual.id)
 
            
     def  atualiza_dados_venda(self):

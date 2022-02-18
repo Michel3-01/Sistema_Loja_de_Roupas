@@ -14,14 +14,30 @@ class CardEstoque(QWidget):
         self.label_nome.setText(self.produto.nome_prod)
         self.label_quant_inicial.setText(str(self.produto.quant_estoque))
 
+
         
+
+    
         if self.produto.id == estoque.id_estoque:
-            self.label_vendidos.setText(str(estoque.vendidos))
-            self.label_situacao.setText(estoque.situacao)
             if estoque.quant_atual < 0:
                 self.label_quant_atual.setText('0')
             else:
-                self.label_quant_atual.setText(str(estoque.quant_atual))
+                x = 0
+                for estoque in funções_estoque.listar_estoque():
+                    x = x - estoque.vendidos
+                    estoque.quant_atual = self.produto.quant_estoque +(x)
+                    self.label_quant_atual.setText(str(estoque.quant_atual))
+                    estoque.vendidos = self.produto.quant_estoque - estoque.quant_atual
+                    self.label_vendidos.setText(str(estoque.vendidos))
+                    if estoque.quant_atual <= 100:
+                        estoque.situacao = 'Vermelho'
+                    elif estoque.quant_atual >= 500:
+                        estoque.situacao = 'Verde'
+                    else:
+                        estoque.situacao = 'Normal'
+                    self.label_situacao.setText(estoque.situacao)
+                   
+                  
         else:
             self.label_vendidos.setText('0')
             self.label_situacao.setText('Normal')

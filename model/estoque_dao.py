@@ -51,12 +51,12 @@ def listar_estoque():
     return lista 
 
 
-def editar(estoque):
+def editar(id):
     try:
         conn = database_estoque.connect()
         cursor = conn.cursor()
         sql = """UPDATE Estoque SET nomeProd=?,  quant_inicial=?,  vendidos=?,  quant_atual=? situacao=?, id_produto=?;"""
-        cursor.execute(sql, estoque.getEstoque())
+        cursor.execute(sql, id.getEstoque())
         conn.commit()
 
     except Exception as e:
