@@ -1,4 +1,4 @@
-from controller.estoque_page import EstoquePage
+
 from model.estoque import Estoque
 from model.produtos import Produtos
 from qt_core import *
@@ -211,7 +211,7 @@ class CadastroVendas(QWidget):
         nova_venda = Vendas(None, nome, email,valor)
         funções_vendas.adicionar_vendas(nova_venda)
         self.close()
-        self.main_window.show_estoque()
+        
 
 
 
