@@ -1,4 +1,4 @@
-
+from controller.estoque_page import EstoquePage
 from model.estoque import Estoque
 from model.produtos import Produtos
 from qt_core import *
@@ -13,7 +13,7 @@ from model import database_produtos
 
 FILE_UI = 'view/cadastro_vendas_page.ui'
 class CadastroVendas(QWidget):
-    def __init__(self):
+    def __init__(self,main_window):
         super().__init__()
         uic.loadUi(FILE_UI,self)
         #Listas
@@ -31,6 +31,7 @@ class CadastroVendas(QWidget):
         
         self.cliente_atual = None
         self.lista_pega_dados_clientes = []
+        self.main_window = main_window
     
 
   
@@ -196,6 +197,7 @@ class CadastroVendas(QWidget):
         self.valor_pago = int(self.total_pago.text()) 
         valor_troco =  self.valor_pago - self.valor_total
         self.troco.setText(f'R$ {valor_troco}')
+        
 
         self.salvar_vendas()
 
@@ -208,7 +210,8 @@ class CadastroVendas(QWidget):
         valor = self.valor_total
         nova_venda = Vendas(None, nome, email,valor)
         funções_vendas.adicionar_vendas(nova_venda)
-        self.tabela_produtos.setRowCount(0)#Zera as linhas da tabela.
+        self.close()
+        self.main_window.show_estoque()
 
 
 

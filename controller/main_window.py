@@ -13,13 +13,14 @@ class MainWindow(QMainWindow):
         super().__init__()
         uic.loadUi(FILE_UI, self)
         #Objetos referente as páginas.
-        
+        self.show_estoque()
         self.relatorio_page = RelatorioPage()
         self.estoque_page = EstoquePage()
         self.cliente_page = ClientesTelaPrincipal()
         self.func_page = FuncionariosTelaPrincipal()
-        self.vendas_page = CadastroVendas()
+        self.vendas_page = CadastroVendas(self)
         self.prod_tela_principal = ProdutosTelaPrincipal()
+        
 
         #Adiciona ás páginas ao painel principal.
         self.painel_principal.insertWidget(0, self.relatorio_page)
