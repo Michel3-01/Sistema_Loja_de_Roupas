@@ -15,5 +15,4 @@ class FuncionarioPage(QWidget):
     def load(self):#Insere os card_funcionários.
         lista = funções_funcionario.listar_todos()
         for funcionarios in lista:
-            
             self.painel_funcionarios_scrollarea.addWidget(CardFuncionario(funcionarios, self.janela_funcionario))

@@ -208,8 +208,9 @@ class CadastroVendas(QWidget):
         valor = self.valor_total
         nova_venda = Vendas(None, nome, email,valor)
         funções_vendas.adicionar_vendas(nova_venda)
+        self.tabela_produtos.setRowCount(0)#Zera as linhas da tabela.
 
-        self.close()
+
 
         
 

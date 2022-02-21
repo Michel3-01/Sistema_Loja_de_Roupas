@@ -14,9 +14,7 @@ class CardEstoque(QWidget):
         self.label_id.setText(str(self.produto.id))
         self.label_nome.setText(self.produto.nome_prod)
         self.label_quant_inicial.setText(str(self.produto.quant_estoque))
-        self.carrega_dados()
 
-    def carrega_dados(self):
         x = []
         for estoque in funções_estoque.listar_estoque():
             if self.produto.id == estoque.id_estoque:

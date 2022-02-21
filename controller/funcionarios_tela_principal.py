@@ -21,7 +21,7 @@ class FuncionariosTelaPrincipal(QWidget):
         self.painel_funcionarios.insertWidget(1,FuncionarioPage(self))
         self.painel_funcionarios.setCurrentIndex(1)
     def show_cad_funcionario(self):
-        self.painel_funcionarios.insertWidget(0,CadFuncionario())
+        self.painel_funcionarios.insertWidget(0,CadFuncionario(self))
         self.painel_funcionarios.setCurrentIndex(0)
     def show_funcionarios_page(self):
         self.painel_funcionarios.insertWidget(1,FuncionarioPage(self))
